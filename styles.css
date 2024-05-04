@@ -1,0 +1,540 @@
+body {
+    margin: 0;
+    font-family: 'Crimson Pro', serif; /* Change font-family */
+    /* Additional CSS styles for body */
+}
+
+.about-link {
+    margin-left: 30px; /* Adjust the margin as needed */
+    color: black; /* Set the text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust the font size as needed */
+    font-weight: bold; /* Set font weight */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.about-link:hover {
+    text-decoration: underline; /* Underline text on hover */
+}
+
+/* Add this CSS to your existing CSS file */
+.about-link {
+    /* Your existing styles for the link */
+    /* For example: */
+    color: #000; /* Default color */
+    text-decoration: none;
+}
+
+.dark-mode .about-link {
+    color: #fff; /* Change color in dark mode */
+}
+
+.dark-mode .about-link:hover {
+    color: #ccc; /* Change color on hover in dark mode */
+}
+
+/* Add this class for dark mode link */
+.dark-mode-link {
+    color: #fff;
+}
+
+/* styles.css */
+
+.spacer {
+    height: 20px; /* Adjust as needed for desired spacing */
+}
+
+.cart-empty-message {
+    text-align: center;
+    font-size: 75px; /* Adjust the font size as needed */
+    margin-top: 250px; /* Add some top margin for spacing */
+}
+
+
+/* Styles for the "Add to Cart" button */
+.add-to-cart-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+	border: 5px solid #000;
+    cursor: pointer;
+	margin-top: 10px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+/* Light mode styles */
+.light-mode .add-to-cart-button {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000;
+}
+
+/* Dark mode styles */
+.dark-mode .add-to-cart-button {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #fff;
+}
+
+/* Animation for hover effect */
+.add-to-cart-button:hover {
+    transform: scale(1.1); /* Increase the size of the button on hover */
+}
+
+/* Animation for click effect */
+.add-to-cart-button:active {
+    transform: scale(0.9); /* Decrease the size of the button on click */
+}
+
+.remove-button {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 5px solid #000;
+    background-color: transparent;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Add transition for smoother mode change */
+}
+
+.light-mode .remove-button {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000
+}
+
+.dark-mode .remove-button {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #fff;
+}
+
+.checkout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 5px solid #000;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s, color 0.3s; /* Add transition for smoother mode change */
+}
+
+/* Light mode styles */
+.light-mode .checkout-button {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000
+}
+
+/* Dark mode styles */
+.dark-mode .checkout-button {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #fff;
+}
+
+.total-price-container {
+    position: fixed;
+    bottom: 75px;
+    right: 375px;
+}
+
+.total-price-container span#totalPrice {
+    margin-right: 40px; /* Adjust the value as needed */
+}
+
+.category-title,
+.category-description {
+    font-family: 'Crimson Pro', serif; /* Change font-family */
+}
+
+
+.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+.dark-mode {
+    background-color: #212121;
+    color: #fff; /* Text color for dark mode */
+}
+
+
+.container {
+    position: sticky;
+    top: 0;
+    background-color: inherit;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dark-mode .container {
+    box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1); /* Adjust the shadow color and opacity as needed */
+}
+
+.cart-icon {
+    width: 30px;
+    cursor: pointer;
+    margin-left: 10px; /* Add left padding to the shopping bag */
+}
+
+/* Add this CSS to your existing CSS file */
+.cart-header {
+    text-align: center;
+    font-size: 26px; /* Adjust font size as needed */
+    font-weight: bold;
+    margin-top: 50px; /* Adjust top margin as needed */
+}
+
+@media (max-width: 768px) {
+    .cart-header {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+}
+
+
+.logo-container {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.logo {
+    max-width: 350px; /* Make the logo bigger */
+}
+
+.person-icon {
+    width: 30px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 20px;
+    transition: transform 0.3s; /* Add transition for smooth transform */
+}
+
+/* CSS for fade-out transition */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out; /* Adjust the duration and easing as needed */
+}
+
+.mode-switch {
+    position: relative;
+    margin-right: 10px; /* Add right padding to the switch */
+    width: 60px;
+    height: 34px;
+}
+
+.mode-switch-checkbox {
+    display: none;
+}
+
+.mode-switch-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: background-color 0.3s;
+}
+
+.mode-switch-checkbox:checked + .mode-switch-label {
+    background-color: #ccc;
+}
+
+.mode-switch-label:before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: white;
+    top: 4px;
+    left: 4px;
+    transition: transform 0.3s;
+}
+
+.mode-switch-checkbox:checked + .mode-switch-label:before {
+    transform: translateX(26px);
+}
+
+.content {
+    padding-top: 100px;
+}
+
+.categories ul li a:visited,
+.categories ul li a:link {
+    color: #000000;
+    text-decoration: none; /* Remove underline */
+}
+
+.dark-mode .categories ul li a:visited,
+.dark-mode .categories ul li a:link {
+    color: #ffffff; /* Change text color to white in dark mode */
+}
+
+
+.categories {
+	text-align: center;
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px; /* Add space between categories and products */
+	
+}
+
+.categories ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.categories ul li {
+    margin-right: 100px; /* Adjust spacing between categories */
+}
+
+.categories ul li:last-child {
+    margin-right: 0; /* Remove margin for the last category */
+}
+
+
+@media (min-width: 768px) {
+    .categories {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.category {
+    text-align: center;
+    background-color: inherit;
+    padding: 20px;
+    border-radius: 30px;
+	border: 5px solid black;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+	margin-bottom: 20px;
+}
+
+
+.light-mode .category {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .category {
+	border: 5px solid white;
+    box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.category-image {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    transition: transform 0.3s; /* Add transition for smooth effect */
+}
+
+.category-image:hover {
+    transform: scale(0.9); /* Enlarge the image on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+
+.category-title {
+    margin-top: 10px;
+    margin-bottom: 5px; /* Add margin at the bottom of the title */
+    font-size: 1.2em;
+    color: inherit;
+}
+
+.category-description {
+    margin-top: 10px; /* Increase the margin between title and description */
+    margin-bottom: 10px; /* Add margin at the bottom of the description */
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.products-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add space between categories and products */
+	margin-bottom: 50px;
+}
+
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%; /* Ensure the product section takes full width */
+	margin-top: 50px;
+}
+
+.product {
+    width: calc(33.33% - 20px);
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Add position relative */
+}
+
+.product-image-wrapper {
+    width: 100%;
+    height: 800px;
+    background-color: #ccc;
+    border-radius: 10px;
+	border: 5px solid #000;
+    overflow: hidden;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.light-mode .product-image-wrapper {
+    background-color: #fff; /* White background in light mode */
+}
+
+.dark-mode .product-image-wrapper {
+    background-color: #000; /* Dark background in dark mode */
+    border-color: #fff; /* White outline in dark mode */
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+
+}
+
+.product-title,
+.product-description {
+    text-align: center;
+    margin-top: 20px; /* Add spacing between title and description */
+    width: 80%; /* Adjust the width */
+    padding: 10px; /* Add padding */
+}
+
+
+.slider-wrapper {
+    position: relative;
+    max-width: 20rem;
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: auto; /* Allow vertical scrollbar if necessary */
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3 rem -0.75rem hsla(0, 0%, 0.25);
+    border-radius: 0.5rem;
+}
+
+.slider-nav a {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    /* background-color: #fff; */ /* Remove white background color */
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.light-mode .slider-nav a {
+    background-color: #000; /* Set dark background color in light mode */
+}
+
+.dark-mode .slider-nav a {
+    background-color: #fff; /* Set light background color in dark mode */
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: contain;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: -10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+.item-details {
+    text-align: center; /* Center the content */
+    margin-bottom: 100px; /* Add some bottom margin for spacing */
+    color: #000; /* Set default text color */
+}
+
+.light-mode .item-details {
+    color: #000; /* Set text color for light mode */
+}
+
+.dark-mode .item-details {
+    color: #fff; /* Set text color for dark mode */
+}
+
+.input-quantity {
+    width: 40px; /* Adjust the width of the input field */
+    padding: 5px; /* Add padding for better appearance */
+    border: 1px solid #ccc; /* Add a border for clarity */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    text-align: center; /* Center the text inside the input field */
+    font-size: 14px; /* Adjust the font size as needed */
+	margin-right: 30px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Add transition for smoother mode change */
+}
+
+.light-mode .input-quantity {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000
+}
+
+.dark-mode .input-quantity {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #fff
+}
+
+
+
+footer {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+    color: #555555;
+}
+
+/* Adjust the color, font-size, padding, etc. according to your design */

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastry Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <img src="img/shopping-bag_black.png" alt="Shopping Bag" class="cart-icon" onclick="openCart()">
+		<a href="about.html" id="aboutLink" class="about-link">About</a>
+        <div class="logo-container">
+            <a href="index.html"> <!-- Adjust the href attribute to your home page URL -->
+                <img src="img/logo_name_black.png" alt="Logo" class="logo">
+            </a>
+        </div>
+		
+		<a href="loginregister.html"><img src="img/person_black.png" alt="Person Icon" class="person-icon"></a>
+
+        <div class="mode-switch">
+            <input type="checkbox" id="modeSwitch" class="mode-switch-checkbox" onclick="toggleMode()">
+            <label for="modeSwitch" class="mode-switch-label"></label>
+        </div>
+    </div>
+
+    <div class="cart-header">CART</div> <!-- Add CART header -->
+
+    <!-- Cart items section -->
+    <div class="cart-items">
+        <!-- Cart items will be displayed here using JavaScript -->
+    </div>
+
+    <!-- Total Price and Checkout Button -->
+    <div class="total-price-container">
+        Total Price: <span id="totalPrice">$0.00</span>
+        <button class="checkout-button" onclick="checkout()">Checkout</button>
+    </div>
+
+    <script>
+function displayCartItems() {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartContainer = document.querySelector('.cart-items');
+    cartContainer.innerHTML = ''; // Clear existing items
+
+    let totalPrice = 0; // Initialize total price
+
+    if (cartItems.length === 0) {
+        cartContainer.innerHTML = '<p class="cart-empty-message">No items in cart</p>';
+    } else {
+        cartItems.forEach((item, index) => {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('cart-item');
+            itemElement.innerHTML = `
+                <div class="item-details">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <p>$${item.price.toFixed(2)}</p>
+                    <input type="number" min="1" value="${item.quantity}" class="input-quantity" onchange="updateQuantity(${index}, this.value)">
+                    <button onclick="removeFromCart(${index})">Remove</button>
+                </div>
+            `;
+            cartContainer.appendChild(itemElement);
+
+            totalPrice += item.price * item.quantity; // Add item price * quantity to total
+        });
+    }
+
+    // Update total price container
+    const totalPriceContainer = document.getElementById('totalPrice');
+    totalPriceContainer.textContent = `Total: $${totalPrice.toFixed(2)}`;
+}
+
+
+
+
+
+
+        // Function to add a product to cart
+        function addToCart(name, description, price, image) {
+    const quantity = 1; // Default quantity is 1
+    const product = { name, description, price, image, quantity }; // Include image and quantity
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Refresh cart display
+    displayCartItems();
+
+    alert('Item added to cart!');
+}
+
+
+        // Function to remove a product from cart
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1); // Remove item at the specified index
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCartItems(); // Refresh cart display
+        }
+
+        // Function to update quantity of a product in cart
+        function updateQuantity(index, quantity) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart[index].quantity = quantity;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCartItems(); // Refresh cart display
+        }
+
+        // Function to checkout (redirect to checkout page)
+        function checkout() {
+			    // Clear cart items from local storage
+    localStorage.removeItem('cart');
+    
+    // Refresh cart display
+    displayCartItems();
+		
+            // Redirect to the checkout page
+            window.location.href = 'index.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            displayCartItems(); // Display cart items when the page loads
+        });
+		
+
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function displayCart() {
+    const cartElement = document.getElementById('cart');
+    cartElement.innerHTML = '';
+
+    cart.forEach(function(product) {
+        const productElement = document.createElement('div');
+        productElement.classList.add('cart-item');
+
+        const productName = document.createElement('div');
+        productName.textContent = product.name;
+        productElement.appendChild(productName);
+
+        const productPrice = document.createElement('div');
+        productPrice.textContent = '$' + product.price.toFixed(2);
+        productElement.appendChild(productPrice);
+
+        cartElement.appendChild(productElement);
+
+        // Add spacing between products
+        const spacer = document.createElement('div');
+        spacer.classList.add('spacer');
+        cartElement.appendChild(spacer);
+    });
+
+    // Calculate and display total
+    const total = cart.reduce((acc, product) => acc + product.price, 0);
+    const totalElement = document.createElement('div');
+    totalElement.textContent = 'Total: $' + total.toFixed(2);
+    cartElement.appendChild(totalElement);
+}
+
+displayCart();
+
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

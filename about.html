@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastry Room</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .about-section {
+            text-align: center;
+            width: 100%;
+            height: 900px;
+            border-radius: 10px;
+            border: 5px solid #000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .about-text {
+            margin: 0 auto;
+            max-width: 600px;
+            font-size: 35px;
+        }
+
+        .about-header {
+            font-size: 56px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+		
+		.light-mode .about-section {
+			background-color: #fff; /* White background in light mode */
+		}
+
+		.dark-mode .about-section {
+			background-color: ##282424; /* Dark background in dark mode */
+			border-color: #fff; /* White outline in dark mode */
+		}
+    </style>
+</head>
+<body class="light-mode">
+    <div class="container">
+        <img src="img/shopping-bag_black.png" alt="Shopping Bag" class="cart-icon" onclick="openCart()">
+        <a href="about.html" class="about-link">About</a>
+        <div class="logo-container">
+            <a href="index.html"> <!-- Adjust the href attribute to your home page URL -->
+                <img src="img/logo_name_black.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <a href="loginregister.html"><img src="img/person_black.png" alt="Person Icon" class="person-icon"></a>
+        <div class="mode-switch">
+            <input type="checkbox" id="modeSwitch" class="mode-switch-checkbox" onclick="toggleMode()">
+            <label for="modeSwitch" class="mode-switch-label"></label>
+        </div>
+    </div>
+
+    <section class="about-section">
+        <header>
+            <h1 class="about-header">About Us</h1>
+        </header>
+        <div class="about-text">
+            <p>Welcome to Pastry Room!</p>
+            <p>At Pastry Room, we are passionate about bringing you the finest selection of cakes, pastries, tiered cakes, and drinks.</p>
+            <p>Our mission is to delight your taste buds with exquisite flavors and textures crafted by our expert pastry chefs.</p>
+            <p>Whether you're celebrating a special occasion or simply indulging in a sweet treat, Pastry Room has something for everyone.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Pastry Room. All Rights Reserved. <br> DESIGNED & BUILT BY | TUTAAN RAD</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

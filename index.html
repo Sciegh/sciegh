@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastry Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <img src="img/shopping-bag_black.png" alt="Shopping Bag" class="cart-icon" onclick="openCart()">
+		<a href="about.html" id="aboutLink" class="about-link">About</a>
+        <div class="logo-container">
+            <a href="index.html"> <!-- Adjust the href attribute to your home page URL -->
+                <img src="img/logo_name_black.png" alt="Logo" class="logo">
+            </a>
+        </div>
+
+		<a href="loginregister.html"><img src="img/person_black.png" alt="Person Icon" class="person-icon"></a>
+		
+        <div class="mode-switch">
+            <input type="checkbox" id="modeSwitch" class="mode-switch-checkbox" onclick="toggleMode()">
+            <label for="modeSwitch" class="mode-switch-label"></label>
+        </div>
+    </div>
+	
+    <div class="content">
+        <div class="categories">
+            <ul>
+                <li><a href="#" onclick="showProducts('cakes')">Cakes</a></li>
+                <li><a href="#" onclick="showProducts('pastry')">Pastry</a></li>
+                <li><a href="#" onclick="showProducts('tiered-cakes')">Tiered Cakes</a></li>
+                <li><a href="#" onclick="showProducts('drinks')">Drinks</a></li>
+            </ul>
+        </div>
+        <div class="slider">
+            <img id="slide-1" src="img/slide/slide-1.png" alt="slide1" />
+            <img id="slide-2" src="img/slide/slide-2.png" alt="slide2" />
+            <img id="slide-3" src="img/slide/slide-3.png" alt="slide3" />				
+        </div>
+        <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+        </div>
+        <div class="product-section"></div> <!-- Container for products -->
+		
+    </div>
+    <footer>
+        <p>© 2024 Pastry Room. All Rights Reserved. <br> DESIGNED & BUILT BY | TUTAAN RAD</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
